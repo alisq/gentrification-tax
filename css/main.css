@@ -7,6 +7,20 @@ td {
     padding:0.25em;
 }
 
+table {
+    border:1px solid #000;
+    padding:0.5em;
+    border-radius:0.25em;
+}
+
+option,
+select,
+input {
+    font-size:24px;
+    border:none;
+    border-bottom:1px solid #000;
+}
+
 button {
     font-size:24px;
     background:black;
@@ -14,6 +28,7 @@ button {
     color:white;
     border-radius:5px;
     padding:0.25em 0.4em;
+   
 }
 
 button:hover {
@@ -21,6 +36,6 @@ button:hover {
     background:white;
 }
 
-#ouput {
+#output {
     font-weight:bold;
 }
