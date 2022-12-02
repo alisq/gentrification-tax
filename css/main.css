@@ -1,0 +1,12 @@
+html,body {
+    font-size:18px;
+    font-family:arial
+}
+
+td {
+    padding:0.25em;
+}
+
+#ouput {
+    font-weight:bold;
+}

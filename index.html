@@ -10,7 +10,7 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
 <table>
@@ -20,7 +20,7 @@
         </td>
 
         <td>
-            $<input type="number">
+            $<input type="number" id="boughtFor" value="800000">
         </td>
 
     </tr>
@@ -30,7 +30,7 @@
         </td>
 
         <td>
-            <select>
+            <select id="boughtYear">
                 <option>1950</option>
                 <option>1951</option>
                 <option>1952</option>
@@ -94,7 +94,7 @@
                 <option>2010</option>
                 <option>2011</option>
                 <option>2012</option>
-                <option>2013</option>
+                <option selected>2013</option>
                 <option>2014</option>
                 <option>2015</option>
                 <option>2016</option>
@@ -110,17 +110,21 @@
     </tr>
     <tr>
         <td>Amount sold for</td>
-        <td>$<input type="number"></td>
+        <td>$<input type="number" id="soldFor" value="1200000"></td>
     </tr>
 
     <tr>
         <td>amount willing to pay</td>
-        <td colspan="2"><input type="range" min="1" max="20" oninput="this.nextElementSibling.value = this.value+'%'">
-            <output>24</output></td>
+        <td colspan="2"><input id="percent" type="range" min="1" max="20" oninput="this.nextElementSibling.value = this.value+'%'">
+            <output>11%</output></td>
     </tr>
 
     <tr>
-        <td colspan="2" id="output"><button>calculate tax</button></td>
+        <td colspan="2"><button  id="calculate">calculate tax</button></td>
+    </tr>
+
+    <tr>
+        <td colspan="2" id="output"></td>
     </tr>
 </table>
  
