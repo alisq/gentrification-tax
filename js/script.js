@@ -1,22 +1,80 @@
 nums = {};
 
+
+$("#persistent--sold-for").change(function(){
+    $("#soldFor").val($(this).val())
+})
+
+//y=.8^{\left(x\right)}+3   
+
+ //= y=25-x
+ //calculate();
+
+
+$("#bought-year").change(function(){
+    $("#suggested-rate").val(getRate()+"%")
+})
+
 $("#calculate").click(function(){
 
-    nums.boughtFor = $("#boughtFor").val()
-    nums.boughtYear = $("#boughtYear").val()
-    nums.soldFor = $("#soldFor").val()
-    nums.percent = $("#percent").val()*0.01
-
-    a =(nums.soldFor-nums.boughtFor)*nums.percent
-    a = a.toFixed(2)
-    a = numberWithCommas(a);
-  
-
-    
-    $("#output").html("You owe  $"+a)
+    calculate();
 })
 
 
+$("#percent").change(function(){
+    calculate();
+})
+
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
+function calculate() {
+    {
+
+        nums.boughtFor = $("#bought-for").val()
+        nums.boughtYear = $("#bought-year").val()
+        nums.soldFor = $("#sold-for").val();
+        nums.percent = $("#percent").val()*0.01
+    
+    
+        formula = 25-(2022-$("#bought-year").val());
+    
+        if (formula > 25) {
+            formula = 25;
+        } else if (formula < 4) {
+            formula = 4;
+        }
+    
+        $("#suggested-rate").val(formula+"%")
+    
+    
+        a =(nums.soldFor-nums.boughtFor)*(formula/100)
+        a = a.toFixed(2)
+        a = numberWithCommas(a);
+    
+    
+        b =(nums.soldFor-nums.boughtFor)*nums.percent
+        b = b.toFixed(2)
+        b = numberWithCommas(b);
+      
+    
+    //    y=\frac{x^{2}}{20}
+    
+        $("#output-suggested-rate").html("Tax at suggested rate  $"+a)
+        $("#output-your-rate").html("Tax at your proposed rate  $"+b)
+    }
+}
+
+function getRate() {
+    formula = 25-(2022-$("#bought-year").val());
+    
+    if (formula > 25) {
+        formula = 25;
+    } else if (formula < 4) {
+        formula = 4;
+    }
+
+    return formula
 }

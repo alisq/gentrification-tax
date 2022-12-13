@@ -1,17 +1,66 @@
+@font-face {
+    font-family: 'Standard';
+    src: url('webfonts/standard-book-webfont.eot'); /* IE9 Compat Modes */
+    src: url('webfonts/standard-book-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('webfonts/standard-book-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('webfonts/standard-book-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('webfonts/standard-book-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('webfonts/standard-book-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+  
+    font-weight:normal;
+  }
+  
+  @font-face {
+    font-family: 'Standard';
+    src: url('webfonts/standard-book-italic-webfont.eot'); /* IE9 Compat Modes */
+    src: url('webfonts/standard-book-italic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('webfonts/standard-book-italic-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('webfonts/standard-book-italic-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('webfonts/standard-book-italic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('webfonts/standard-book-italic-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-style: italic;
+    font-weight:normal;
+  }
+
+  @font-face {
+    font-family: 'Standard';
+    src: url('webfonts/standard-bold-italic-webfont.eot'); /* IE9 Compat Modes */
+    src: url('webfonts/standard-bold-italic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('webfonts/standard-bold-italic-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('webfonts/standard-bold-italic-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('webfonts/standard-bold-italic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('webfonts/standard-bold-italic-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-style: italic;
+    font-weight:bold;
+  }
+
+  @font-face {
+    font-family: 'Standard';
+    src: url('webfonts/standard-bold-webfont.eot'); /* IE9 Compat Modes */
+    src: url('webfonts/standard-bold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('webfonts/standard-bold-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('webfonts/standard-bold-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('webfonts/standard-bold-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('webfonts/standard-bold-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+    
+    font-weight:bold;
+  }
+
+
 html,body {
     font-size:24px;
-    font-family:arial
+    font-family:'Standard'
 }
 
 td {
     padding:0.25em;
 }
 
-table {
+/* table {
     border:1px solid #000;
     padding:0.5em;
     border-radius:0.25em;
-}
+} */
 
 option,
 select,
@@ -35,7 +84,55 @@ button:hover {
     color:black;
     background:white;
 }
-
-#output {
+/* 
+.output {
     font-weight:bold;
+}
+ */
+ 
+
+ h1,
+ h2,
+ h4,
+ h5,
+ h6 {
+  font-weight:bold;
+ }
+small {
+  font-size:0.75em;
+}
+
+input {
+  border-radius:4px;
+  padding:0.1em 0.25em;
+  
+}
+
+small input{
+  text-align:right;
+  width:6em;
+}
+
+.float-right {
+  float:right;
+}
+
+
+.table {
+  /* width:100%; */
+  /* display:block; */
+  padding:1em 0;
+  background:rgba(204, 204, 204,0.4);
+  border-radius:1em;
+  border:1px solid rgba(0,0,0,0.25)
+
+}
+header {
+  position:fixed;
+  width:100%;
+}
+
+#top-spacer {
+
+  height:5em;
 }
