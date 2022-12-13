@@ -2,7 +2,7 @@ nums = {};
 
 
 $("#persistent--sold-for").change(function(){
-    $("#soldFor").val($(this).val())
+    $("#sold-for").val($(this).val())
 })
 
 //y=.8^{\left(x\right)}+3   

@@ -136,3 +136,18 @@ header {
 
   height:5em;
 }
+
+
+#bar {
+  margin:1em;
+  height:150px;
+  background:rgba(241,242,242,1);
+  display:flex;
+}
+
+#bar-gentrification-tax {
+  width:5%;
+  background:rgba(218,28,92,0.75);
+  height:100%;
+}
+
