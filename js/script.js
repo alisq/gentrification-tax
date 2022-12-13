@@ -11,6 +11,10 @@ $("#persistent--sold-for").change(function(){
  //calculate();
 
 
+ $("#scroll-to-calc").click(function(){
+    $(document).scrollTo("#calculator",200)
+ })
+
 $("#bought-year").change(function(){
     $("#suggested-rate").val(getRate()+"%")
 })
