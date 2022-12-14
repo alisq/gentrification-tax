@@ -11,6 +11,10 @@ $("#persistent--sold-for").change(function(){
  //calculate();
 
 
+ // THIS IS CLOSE:
+ // y=\left(\frac{25}{\sqrt{X}}\right)
+
+
  $("#scroll-to-calc").click(function(){
     $(document).scrollTo("#calculator",200)
  })
@@ -42,6 +46,8 @@ function calculate() {
         nums.soldFor = $("#sold-for").val();
         nums.percent = $("#percent").val()*0.01
     
+        years = numberWithCommas(2022-nums.boughtYear);
+        increment = numberWithCommas((nums.soldFor-nums.boughtFor).toFixed(2));
     
         formula = 25-(2022-$("#bought-year").val());
     
@@ -68,6 +74,10 @@ function calculate() {
     
         $("#output-suggested-rate").html("Tax at suggested rate  $"+a)
         $("#output-your-rate").html("Tax at your proposed rate  $"+b)
+
+        $("#increment").html(`
+        Total amount acrued over ${years} years: $${increment}
+        `)
     }
 }
 
