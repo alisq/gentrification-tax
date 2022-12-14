@@ -154,3 +154,14 @@ header {
 table {
   width:100%;
 }
+
+
+img {
+  max-width:100%;
+}
+
+.graph {
+  display:block;
+  max-width:60%;
+  margin:0 auto 2em;
+}
