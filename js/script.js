@@ -1,6 +1,8 @@
 nums = {};
 
 
+
+
 $("#persistent--sold-for").change(function(){
     $("#sold-for").val($(this).val())
 })
