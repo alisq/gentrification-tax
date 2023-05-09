@@ -100,6 +100,22 @@ function getRate() {
     return formula
 }
 
+function percentIncrease(year) {
+  /*
+  This function takes in a year and returns the corresponding percentage increase from 7% to 20% over 20 years,
+  with a curve that is flatter as it approaches 20% and steeper as it approaches 7%.
+  */
+  if (year < 20) {
+    return 0.2; // Year is out of range, return null
+  } else {
+    const x = (year) / 20; // Scale the year to a value between 0 and 1
+    const k = 3; // Controls the steepness of the curve
+    const y = Math.tanh(k * (2 * x - 1)); // Apply the arctanh function to the scaled year
+    const pct = (y + 1) / 2 * 0.13 + 0.07; // Scale and shift the result to the desired range
+    return pct;
+  }
+}
+
 
 // Jquery Dependency
 
