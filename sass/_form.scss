@@ -3,38 +3,66 @@
 option,
 select,
 input {
-    font-size:24px;
+    font-size:$fontSize;
     border:none;
-    border-bottom:1px solid #000;
+    border-radius: 0;
+    border-bottom:1px solid $black;
+    font-size:0.8rem;
+    padding:0.1rem;
 }
 
+input[type="text"],
+input[type="email"], {
+  width:100%;
+}
 button {
-    font-size:24px;
-    background:black;
-    border:1px solid black;
-    color:white;
-    border-radius:5px;
-    padding:0.25em 0.4em;
+    font-size:$fontSize;
+    border-radius:0;
+    margin:0;
+    padding:0 1em;
+    border:0;
+    background:$black;
+    border-bottom:1px solid $white;
+    color:$white;
+    transition:all 0.2s;
+    
+    &:hover {
+      background:$white;
+      color:$black;
+    }
+
+    .table & {
+      background:$white;
+      border-bottom:1px solid $black;
+      color:$black;
+
+      &:hover {
+        background:$black;
+        color:$white;
+      }
+
+    }
    
 }
 
-button:hover {
-    color:black;
-    background:white;
+.accordion-header {
+  padding:0;
 }
-/* 
-.output {
-    font-weight:bold;
-}
- */
- 
+.accordion-button {
+  font-size:1rem;
+  line-height:1.5;
 
-
-input {
-  border-radius:4px;
-  padding:0.1em 0.25em;
-  
+  &:not(.collapsed) {
+    color: $white;
+    background-color: $black;
+    box-shadow: none;
+  }
 }
+
+.accordion-body {
+  padding:1em!important;
+}
+
 
 small input{
   text-align:right;

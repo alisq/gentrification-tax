@@ -11,12 +11,12 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
 
-<header class="p-3 text-bg-dark">
-    <h1><a class="nav-link" href="/">A Gentrification Tax</a></h1>
+<header>
+    <h1><a class="nav-link active" href="/">A Gentrification Tax</a></h1>
     
         <div class="navbar">
           <a class="nav-link" aria-current="page" href="pay.html">Pay The Voluntary Tax</a>
@@ -26,7 +26,7 @@
           
         </div>
       
-    <small class="float-right">Amount sold for: $ <input type="number" value="1079395" id="persistent--sold-for"> <button id="scroll-to-calc" class="btn btn-secondary" style="font-size:0.8em;font-weight:bold;">go</button></small> 
+    <!-- <small class="float-right">Amount sold for: $ <input type="number" value="1079395" id="persistent--sold-for"> <button id="scroll-to-calc" class="btn btn-secondary" style="font-size:0.8em;font-weight:bold;">go</button></small>  -->
 </header>
 
 <div id="top-spacer"></div>
@@ -61,7 +61,7 @@
         
           <div class="mb-3">
             
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="your name">
+            <input type="text" id="name" aria-describedby="emailHelp" placeholder="your name">
             
           </div>
 
@@ -70,13 +70,13 @@
     
           <div class="mb-3">
             
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="your email address">
+            <input type="email"  id="email1" aria-describedby="emailHelp" placeholder="your email address">
             
           </div>
         </div>
         <div class="col-2"> 
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" >Submit</button>
         </div>
   </div>
 </form>
@@ -87,64 +87,47 @@
     <div class="col-1">
     </div>
     <div class="col-10">
-      Sign this letter addressed to the mayor and council advocating for this tax. 
+      <input type="checkbox" id="signed"> <small>Check here to add your name to the letter below addressed to the mayor and council advocating for this tax.</small>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-1">
+  
     </div>
-    <div class="col-8">
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="your name">
-    </div>
-    <div class="col-2"> 
 
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
+</div>
+</div>
+
+<div id="footer">
+  <div class="container">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Orgs</h5>
+          <ul class="nav flex-column">
+            <li>
+              <a href="http://gentrification.tax">GTA</a>
+            </li>
+            <li>
+              <a href="http://pnlt.ca">PNLT</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4 mb-3"></div>
+        <div class="col-md-5 offset-md-1 mb-3">
+          <form>
+            <h5>Subscribe to our newsletter</h5>
+            <p>For more information.</p>
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="email" class="visually-hidden">Email address</label>
+              <input id="email" type="text" placeholder="Email address">
+              <button type="button">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
   </div>
-
-    </div>
-
 </div>
-</div>
-
-
-<div class="text-bg-dark" id="footer">
-    <div class="container">
-<footer class="py-5">
-    <div class="row">
-      <div class="col-6 col-md-2 mb-3">
-        <h5>Orgs</h5>
-        <ul class="nav flex-column">
-          <li>GTA</la>
-            <li>PNLT</la>
-                
-        </ul>
-      </div>
-
-      <div class="col-6 col-md-4 mb-3">
-        <p>some text goes here</p>
-      </div>
-
-     
-
-      <div class="col-md-5 offset-md-1 mb-3">
-        <form>
-          <h5>Subscribe to our newsletter</h5>
-          <p>For more information.</p>
-          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-            <label for="newsletter1" class="visually-hidden">Email address</label>
-            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-            <button class="btn btn-primary" type="button">Subscribe</button>
-          </div>
-        </form>
-      </div>
-    </div>
-</div>
-</div>
-
-    
-  </footer>
+</footer>
 
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>

@@ -11,22 +11,20 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
 
-<header class="p-3 text-bg-dark">
-    <h1><a class="nav-link" href="/">A Gentrification Tax</a></h1>
-    
+
+      <header>
+        <h1><a class="nav-link active" href="/">A Gentrification Tax</a></h1>
         <div class="navbar">
           <a class="nav-link active" aria-current="page" href="pay.html">Pay The Voluntary Tax</a>
           <a class="nav-link" href="join.html">Join The Campaign</a>
           <a class="nav-link" href="FAQ.html">FAQ</a>
           <a class="nav-link" href="#footer">Contact</a>
-          
         </div>
-      
-    <small class="float-right">Amount sold for: $ <input type="number" value="1079395" id="persistent--sold-for"> <button id="scroll-to-calc" class="btn btn-secondary" style="font-size:0.8em;font-weight:bold;">go</button></small> 
+        <!-- <small class="float-right">Amount sold for: $ <input type="number" value="1079395" id="persistent--sold-for"> <button id="scroll-to-calc" class="btn btn-secondary" style="font-size:0.8em;font-weight:bold;">go</button></small>  -->
 </header>
 
 <div id="top-spacer"></div>
@@ -57,7 +55,7 @@
 
 <p>
   
-<a class="btn btn-primary" href="http://pnlt.ca/donate" role="button">donate to PNLT</a>
+<a class="button" href="http://pnlt.ca/donate" target="_blank">donate to PNLT</a>
 </p>
 
 
@@ -101,43 +99,42 @@
 </div>
 
 
-<div class="text-bg-dark" id="footer">
-    <div class="container">
+<div id="footer">
+  <div class="container">
 <footer class="py-5">
-    <div class="row">
-      <div class="col-6 col-md-2 mb-3">
-        <h5>Orgs</h5>
-        <ul class="nav flex-column">
-          <li>GTA</li>
-            <li>PNLT</li>
-                
-        </ul>
-      </div>
-
-      <div class="col-6 col-md-4 mb-3">
-        <p>some text goes here</p>
-      </div>
-
-      maybe a map?
-     
-
-      <div class="col-md-5 offset-md-1 mb-3">
-        <form>
-          <h5>Subscribe to our newsletter</h5>
-          <p>For more information.</p>
-          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-            <label for="newsletter1" class="visually-hidden">Email address</label>
-            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-            <button class="btn btn-primary" type="button">Subscribe</button>
-          </div>
-        </form>
-      </div>
+  <div class="row">
+    <div class="col-6 col-md-2 mb-3">
+      <h5>Orgs</h5>
+      <ul class="nav flex-column">
+        <li><a href="http://gentrification.tax">GTA</a></li>
+          <li><a href="http://pnlt.ca">PNLT</a></li>
+              
+      </ul>
     </div>
+
+    <div class="col-6 col-md-4 mb-3">
+      
+    </div>
+
+   
+
+    <div class="col-md-5 offset-md-1 mb-3">
+      <form>
+        <h5>Subscribe to our newsletter</h5>
+        <p>For more information.</p>
+        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+          <label for="email" class="visually-hidden">Email address</label>
+          <input id="email" type="text" placeholder="Email address">
+          <button type="button">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 </div>
 
-    
-  </footer>
+  
+</footer>
 
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>

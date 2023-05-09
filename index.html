@@ -15,7 +15,7 @@
     </head>
     <body>
 
-<header class="p-3 text-bg-dark">
+<header>
     <h1><a class="nav-link active" href="/">A Gentrification Tax</a></h1>
     
         <div class="navbar">
@@ -26,7 +26,7 @@
           
         </div>
       
-    <small class="float-right">Amount sold for: $ <input type="number" value="1079395" id="persistent--sold-for"> <button id="scroll-to-calc" class="btn btn-secondary" style="font-size:0.8em;font-weight:bold;">go</button></small> 
+    
 </header>
 
 <div id="top-spacer"></div>
@@ -45,7 +45,7 @@
 
             <div class="d3_fruit"></div>
         <p>
-            <a href="">Homeowners in Toronto make</a> a big profit when they sell. Where does this value come from?
+            Homeowners in Toronto make a big profit when they sell. Where does this value come from?
         </p>
         <p>
             It comes directly from the culture, services, and vitality of our neighbourhood. Indigenous people, community organizers, local businesses, newcomers, tenants, publicly funded infrastructure, and ecosystems all create value that makes a neighbourhood desirable. Yet owners pocket this value, even though they haven’t earned it. This profit is called the “unearned increment” and it should be taxed and reinvested locally.
@@ -72,111 +72,60 @@
     <div class="col-1">
     </div>
     <div class="col-10">
-    
+    <h3 class="text-center">Calculate Your Tax</h3>
     <table>
     <tr>
-        <td>
-            Amount purchased for
+        <td class="label">
+            <label for="bought-for">Amount purchased for</label>
         </td>
 
         <td>
-            $<input type="number" id="bought-for" value="381963">
+            <input type="text" id="bought-for" value="$381,963">
         </td>
 
     </tr>
     <tr>
-        <td>
-            Year Purchased
+        <td class="label">
+            <label for="bought-year">Year Purchased</label>
         </td>
 
         <td>
             <select id="bought-year">
-                
-                <option>1972</option>
-                <option>1973</option>
-                <option>1974</option>
-                <option>1975</option>
-                <option>1976</option>
-                <option>1977</option>
-                <option>1978</option>
-                <option>1979</option>
-                <option>1980</option>
-                <option>1981</option>
-                <option>1982</option>
-                <option>1983</option>
-                <option>1984</option>
-                <option>1985</option>
-                <option>1986</option>
-                <option>1987</option>
-                <option>1988</option>
-                <option>1989</option>
-                <option>1990</option>
-                <option>1991</option>
-                <option>1992</option>
-                <option>1993</option>
-                <option>1994</option>
-                <option>1995</option>
-                <option>1996</option>
-                <option>1997</option>
-                <option>1998</option>
-                <option>1999</option>
-                <option>2000</option>
-                <option>2001</option>
-                <option>2002</option>
-                <option>2003</option>
-                <option>2004</option>
-                <option>2005</option>
-                <option>2006</option>
-                <option>2007</option>
-                <option>2008</option>
-                <option>2009</option>
-                <option>2010</option>
-                <option>2011</option>
-                <option>2012</option>
-                <option selected>2007</option>
-                <option>2014</option>
-                <option>2015</option>
-                <option>2016</option>
-                <option>2017</option>
-                <option>2018</option>
-                <option>2019</option>
-                <option>2020</option>
-                <option>2021</option>
-                <option>2022</option>
+                <option>1972</option><option>1973</option><option>1974</option><option>1975</option><option>1976</option><option>1977</option><option>1978</option><option>1979</option><option>1980</option><option>1981</option><option>1982</option><option>1983</option><option>1984</option><option>1985</option><option>1986</option><option>1987</option><option>1988</option><option>1989</option><option>1990</option><option>1991</option><option>1992</option><option>1993</option><option>1994</option><option>1995</option><option>1996</option><option>1997</option><option>1998</option><option>1999</option><option>2000</option><option>2001</option><option>2002</option><option>2003</option><option>2004</option><option>2005</option><option>2006</option><option>2007</option><option>2008</option><option>2009</option><option>2010</option><option>2011</option><option>2012</option><option selected>2007</option><option>2014</option><option>2015</option><option>2016</option><option>2017</option><option>2018</option><option>2019</option><option>2020</option><option>2021</option><option>2022</option>
             </select>
         </td>
 
     </tr>
     <tr>
-        <td>Amount sold for</td>
-        <td>$<input type="number" id="sold-for" value="1079395"></td>
+        <td class="label">
+            <label for="sold-for">Amount sold for</label>
+        </td>
+        <td><input type="text" id="sold-for" value="$1,079,395"></td>
     </tr>
 
     <tr>
-        <td><em>
-            Suggested rate</em></td>
-        <td colspan="2"><input id="suggested-rate" type="text" value="7%" disabled>
+        <td class="label">
+            Suggested rate</td>
+        <td colspan="2"><div id="suggested-rate" >7%</div>
             </td>
     </tr>
 
 
     <tr>
-        <td><em>Amount willing to pay</en></td>
+        <td class="label">Amount willing to pay</td>
         <td colspan="2"><input id="percent" type="range" min="1" max="20" oninput="this.nextElementSibling.value = this.value+'%'">
             <output>11%</output></td>
     </tr>
 
     <tr>
-        <td colspan="2"><button id="calculate">calculate tax</button></td>
+        <td colspan="2" class="text-center"><button id="calculate">calculate tax</button></td>
     </tr>
 
 
 
     <tr>
         <td colspan="2" class="ouput">
-            <code><small id="increment">
-                
-            </small></code>
+            <small id="increment"></small>
 
         </td>
     </tr>
@@ -196,44 +145,38 @@
 
 </div>
 </div>
-
-
-<div class="text-bg-dark" id="footer">
+<div id="footer">
     <div class="container">
-<footer class="py-5">
-    <div class="row">
-      <div class="col-6 col-md-2 mb-3">
-        <h5>Orgs</h5>
-        <ul class="nav flex-column">
-          <li>GTA</la>
-            <li>PNLT</la>
-                
-        </ul>
-      </div>
-
-      <div class="col-6 col-md-4 mb-3">
-        <p>some text goes here</p>
-      </div>
-
-     
-
-      <div class="col-md-5 offset-md-1 mb-3">
-        <form>
-          <h5>Subscribe to our newsletter</h5>
-          <p>For more information.</p>
-          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-            <label for="newsletter1" class="visually-hidden">Email address</label>
-            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-            <button class="btn btn-primary" type="button">Subscribe</button>
+      <footer class="py-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Orgs</h5>
+            <ul class="nav flex-column">
+              <li>
+                <a href="http://gentrification.tax">GTA</a>
+              </li>
+              <li>
+                <a href="http://pnlt.ca">PNLT</a>
+              </li>
+            </ul>
           </div>
-        </form>
-      </div>
+          <div class="col-6 col-md-4 mb-3"></div>
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>For more information.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="email" class="visually-hidden">Email address</label>
+                <input id="email" type="text" placeholder="Email address">
+                <button type="button">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
     </div>
-</div>
-</div>
-
-    
+  </div>
   </footer>
+  
 
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
