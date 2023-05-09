@@ -187,3 +187,10 @@ table {
 
 td {
   padding: 0.25em; }
+
+#charts {
+  position: relative;
+  height: 500px; }
+  #charts #chart1,
+  #charts #chart2 {
+    position: absolute; }
