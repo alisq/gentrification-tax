@@ -1,0 +1,24 @@
+{
+  "name": "gta-pnlt-lga",
+  "version": "1.0.0",
+  "description": "",
+  "main": "d3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile-sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alisq/GTA-PNLT-LGA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alisq/GTA-PNLT-LGA/issues"
+  },
+  "homepage": "https://github.com/alisq/GTA-PNLT-LGA#readme",
+  "dependencies": {
+    "node-sass": "^7.0.3",
+    "sass": "^1.62.1"
+  }
+}

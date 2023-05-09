@@ -1,0 +1,82 @@
+
+header {
+    position:fixed;
+    width:100%;
+    z-index:100;
+  }
+
+
+.navbar {
+    display:inline-block;
+  }
+  
+  .nav-link {
+    display:inline-block;
+    padding:0 0.5em;
+    color:rgba(255,255,255,0.7)
+  }
+  
+   
+  .nav-link.active {
+    
+    color:rgba(255,255,255,1)
+  }
+  
+  
+  #top-spacer {
+  
+    height:5em;
+  }
+  
+
+
+.main-content {
+    min-height:80vh;
+  }
+
+
+
+
+.graph {
+    display:block;
+    max-width:60%;
+    margin:0 auto 2em;
+  }
+  
+  
+  #bar {
+    margin:1em;
+    height:150px;
+    background:rgba(241,242,242,1);
+    display:flex;
+  }
+  
+  #bar-gentrification-tax {
+    width:5%;
+    background:rgba(218,28,92,0.75);
+    height:100%;
+  }
+
+
+.float-right {
+    float:right;
+  }
+
+  
+table {
+    width:100%;
+}
+  
+ .table {
+  /* width:100%; */
+  /* display:block; */
+  padding:1em 0;
+  background:rgba(204, 204, 204,0.4);
+  border-radius:1em;
+  border:1px solid rgba(0,0,0,0.25)
+
+}
+  
+td {
+    padding:0.25em;
+}

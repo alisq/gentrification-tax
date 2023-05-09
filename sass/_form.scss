@@ -1,0 +1,42 @@
+
+
+option,
+select,
+input {
+    font-size:24px;
+    border:none;
+    border-bottom:1px solid #000;
+}
+
+button {
+    font-size:24px;
+    background:black;
+    border:1px solid black;
+    color:white;
+    border-radius:5px;
+    padding:0.25em 0.4em;
+   
+}
+
+button:hover {
+    color:black;
+    background:white;
+}
+/* 
+.output {
+    font-weight:bold;
+}
+ */
+ 
+
+
+input {
+  border-radius:4px;
+  padding:0.1em 0.25em;
+  
+}
+
+small input{
+  text-align:right;
+  width:6em;
+}
