@@ -15,6 +15,12 @@ html, body {
 img {
   max-width: 100%; }
 
+.img {
+  padding: 1.5rem 0;
+  display: block;
+  margin: auto;
+  max-width: 800px; }
+
 a:link,
 a:visited {
   color: white;
@@ -212,8 +218,4 @@ td {
     display: none; }
   .container {
     min-height: 0;
-    margin: 1.5rem 0; }
-  .col-1 {
-    display: none; }
-  .col-10 {
-    width: 100%; } }
+    margin: 1.5rem 0; } }
