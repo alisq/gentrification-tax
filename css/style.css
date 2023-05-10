@@ -67,6 +67,7 @@ header h1 {
   text-align: right;
   padding-right: 1em; }
 
+.small,
 small {
   padding: 0.15rem 0;
   font-size: 0.7rem; }
@@ -200,7 +201,8 @@ td {
 
 #charts {
   position: relative;
-  height: 500px; }
+  height: 800px;
+  margin-bottom: 3rem; }
   #charts #chart1,
   #charts #chart2 {
     position: absolute; }

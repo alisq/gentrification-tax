@@ -106,8 +106,7 @@ function percentIncrease(year) {
   with a curve that is flatter as it approaches 20% and steeper as it approaches 7%.
   */
   if (year < 20) {
-    return 0.2; // Year is out of range, return null
-  } else {
+    
     const x = (year) / 20; // Scale the year to a value between 0 and 1
     const k = 3; // Controls the steepness of the curve
     const y = Math.tanh(k * (2 * x - 1)); // Apply the arctanh function to the scaled year
@@ -116,6 +115,14 @@ function percentIncrease(year) {
   }
 }
 
+
+let all_rates = [];
+
+for (i=0;i<20;i++) {
+  r = {"x":i,"y":percentIncrease(i)}
+  all_rates.push(r)
+}
+console.log(JSON.stringify(all_rates))
 
 // Jquery Dependency
 
