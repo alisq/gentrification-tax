@@ -7,29 +7,43 @@ header {
     background:$white;
     border-bottom:3px dashed $black;
 
+    h1 {
+      padding:1em;
+    }
+
     .navbar {
-        display:inline-block;
+      list-style-type: none;  
+      display:inline-block;
         padding:1rem;
         margin:0;
+        float:right;
         
-        
-        .nav-link {
+        & li {
+          display:inline;
+
+          & .nav-link {
             display:inline-block;
             padding:0 0.5em;
             color:$black;
             background:$white;
             border-color:$white;
 
-          }
-
-          .nav-link:hover,
-          .nav-link:active,
-          .nav-link.active {
+          &:hover,
+          &:active,
+          &.active {
             background:$black;
             color:$white;
             border-color:$black;
 
           }
+
+          }
+
+        }
+        
+        
+
+          
 
       }
       

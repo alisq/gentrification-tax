@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'Standard';
   line-height: 1.5; }
 
@@ -49,7 +49,7 @@ h5,
 h6 {
   font-weight: bold;
   font-size: 1rem;
-  line-height: 1;
+  line-height: 1.5;
   padding: 0 0 1em 0;
   margin: 0; }
 
@@ -68,7 +68,7 @@ small {
 option,
 select,
 input {
-  font-size: 20px;
+  font-size: 18px;
   border: none;
   border-radius: 0;
   border-bottom: 1px solid #00004b;
@@ -80,7 +80,7 @@ input[type="email"] {
   width: 100%; }
 
 button {
-  font-size: 20px;
+  font-size: 18px;
   border-radius: 0;
   margin: 0;
   padding: 0 1em;
@@ -124,22 +124,26 @@ header {
   z-index: 100;
   background: white;
   border-bottom: 3px dashed #00004b; }
+  header h1 {
+    padding: 1em; }
   header .navbar {
+    list-style-type: none;
     display: inline-block;
     padding: 1rem;
-    margin: 0; }
-    header .navbar .nav-link {
-      display: inline-block;
-      padding: 0 0.5em;
-      color: #00004b;
-      background: white;
-      border-color: white; }
-    header .navbar .nav-link:hover,
-    header .navbar .nav-link:active,
-    header .navbar .nav-link.active {
-      background: #00004b;
-      color: white;
-      border-color: #00004b; }
+    margin: 0;
+    float: right; }
+    header .navbar li {
+      display: inline; }
+      header .navbar li .nav-link {
+        display: inline-block;
+        padding: 0 0.5em;
+        color: #00004b;
+        background: white;
+        border-color: white; }
+        header .navbar li .nav-link:hover, header .navbar li .nav-link:active, header .navbar li .nav-link.active {
+          background: #00004b;
+          color: white;
+          border-color: #00004b; }
 
 #footer {
   border-top: 3px dashed #00004b; }
@@ -194,3 +198,22 @@ td {
   #charts #chart1,
   #charts #chart2 {
     position: absolute; }
+
+@media (max-width: 767.98px) {
+  header {
+    position: static;
+    height: auto;
+    text-align: center; }
+    header .navbar {
+      float: none; }
+      header .navbar li {
+        display: block; }
+  #top-spacer {
+    display: none; }
+  .container {
+    min-height: 0;
+    margin: 1.5rem 0; }
+  .col-1 {
+    display: none; }
+  .col-10 {
+    width: 100%; } }
