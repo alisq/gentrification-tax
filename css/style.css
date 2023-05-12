@@ -200,12 +200,9 @@ td {
   padding: 0.25em; }
 
 #charts {
-  position: relative;
-  height: 800px;
-  margin-bottom: 3rem; }
-  #charts #chart1,
-  #charts #chart2 {
-    position: absolute; }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 800px; }
 
 @media (max-width: 767.98px) {
   header {

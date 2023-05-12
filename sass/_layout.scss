@@ -124,13 +124,14 @@ td {
 
 
 #charts {
-  position:relative;
+  display:grid;
+  grid-template-columns:1fr 1fr;
   height:800px;
-  margin-bottom:3rem;
-  & #chart1,
-  & #chart2 {
-    position:absolute;
-  }
+  
+  // & #chart1,
+  // & #chart2 {
+  //   position:absolute;
+  // }
   
 }
 
