@@ -1,6 +1,6 @@
 
   // set the dimensions and margins of the graph
-  const margin = {top: 10, right: 160, bottom: 30, left: 160},
+  const margin = {top: 10, right: 220, bottom: 30, left: 180},
       width = 1200 - margin.left - margin.right,
       height = 800 - margin.top - margin.bottom;
   
@@ -65,7 +65,7 @@
 
       //adding dots
         svg.append("g")
-        .call(d3.axisLeft(y));
+        .call(d3.axisLeft(y).tickFormat(y => "$"+y.toLocaleString()));
 
            // Add the dots
            svg.selectAll("circle")
@@ -131,7 +131,27 @@ svg2.append("path")
 //     .call(d3.axisBottom(x));
 
 
-    var axis = d3.axisRight(y);
-var g2 = svg.append("g").attr("transform", "translate("+(width)+",0)").call(axis);
+    var axisRight = d3.axisRight(y);
+    
+
+var g2 = svg2.append("g").attr("transform", "translate("+(width)+",0)").style("color","red").call(axisRight);
+
+//LEFT AXIS TITLE
+svg.append("text")
+  .attr("transform", `translate(-173, 10)`)
+  .attr("class","small")
+  .text("Average price")
+
+//RIGHT AXIS TITLE
+svg2.append("text")
+.attr("class","small")
+  .attr("transform", `translate(${width+10}, 10)`)
+  .text("Amount taxed")
+
+//BOTTOM AXIS TITLE
+svg.append("text")
+  .attr("transform", `translate(${width+30}, ${height+22})`)
+  .attr("class","small")
+  .text("Year purchased");
 
 
