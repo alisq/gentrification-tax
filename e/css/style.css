@@ -1,0 +1,220 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: 'Standard';
+  line-height: 1.5; }
+
+html, body {
+  background: white;
+  color: #00004b; }
+
+img {
+  max-width: 100%; }
+
+.img {
+  padding: 1.5rem 0;
+  display: block;
+  margin: auto;
+  max-width: 800px; }
+
+a:link,
+a:visited {
+  color: white;
+  background: #00004b;
+  text-decoration: none;
+  border-bottom: 4px solid #00004b; }
+
+a:hover,
+a:active,
+a.active {
+  background: white;
+  color: #00004b;
+  text-decoration: none;
+  border-bottom: 4px solid white; }
+
+@font-face {
+  font-family: 'Standard';
+  src: url("webfonts/MartianMono-StdRg.woff2") format("woff2");
+  font-weight: normal; }
+
+@font-face {
+  font-family: 'Standard';
+  src: url("webfonts/MartianMono-StdBd.woff2") format("woff2");
+  font-style: normal;
+  font-weight: bold; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0 0 1em 0;
+  margin: 0; }
+
+header h1 {
+  display: inline-block;
+  margin-left: 1rem; }
+
+.label {
+  text-align: right;
+  padding-right: 1em; }
+
+.small,
+small {
+  padding: 0.15rem 0;
+  font-size: 0.7rem; }
+
+option,
+select,
+input {
+  font-size: 18px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #00004b;
+  font-size: 0.8rem;
+  padding: 0.1rem; }
+
+input[type="text"],
+input[type="email"] {
+  width: 100%; }
+
+button {
+  font-size: 18px;
+  border-radius: 0;
+  margin: 0;
+  padding: 0 1em;
+  border: 0;
+  background: #00004b;
+  border-bottom: 1px solid white;
+  color: white;
+  transition: all 0.2s; }
+  button:hover {
+    background: white;
+    color: #00004b; }
+  .table button {
+    background: white;
+    border-bottom: 1px solid #00004b;
+    color: #00004b; }
+    .table button:hover {
+      background: #00004b;
+      color: white; }
+
+.accordion-header {
+  padding: 0; }
+
+.accordion-button {
+  font-size: 1rem;
+  line-height: 1.5; }
+  .accordion-button:not(.collapsed) {
+    color: white;
+    background-color: #00004b;
+    box-shadow: none; }
+
+.accordion-body {
+  padding: 1em !important; }
+
+small input {
+  text-align: right;
+  width: 6em; }
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background: white;
+  border-bottom: 3px dashed #00004b; }
+  header h1 {
+    padding: 1em; }
+  header .navbar {
+    list-style-type: none;
+    display: inline-block;
+    padding: 1rem;
+    margin: 0;
+    float: right; }
+    header .navbar li {
+      display: inline; }
+      header .navbar li .nav-link {
+        display: inline-block;
+        padding: 0 0.5em;
+        color: #00004b;
+        background: white;
+        border-color: white; }
+        header .navbar li .nav-link:hover, header .navbar li .nav-link:active, header .navbar li .nav-link.active {
+          background: #00004b;
+          color: white;
+          border-color: #00004b; }
+
+#footer {
+  border-top: 3px dashed #00004b; }
+
+#top-spacer {
+  height: 5em; }
+
+.main-content {
+  min-height: 80vh; }
+
+.graph {
+  display: block;
+  max-width: 60%;
+  margin: 0 auto 2em; }
+
+#bar {
+  margin: 1em;
+  height: 150px;
+  background: #f1f2f2;
+  display: flex; }
+
+#bar-gentrification-tax {
+  width: 5%;
+  background: rgba(218, 28, 92, 0.75);
+  height: 100%; }
+
+.float-right {
+  float: right; }
+
+table {
+  width: 100%; }
+
+.table {
+  padding: 1em 0;
+  color: white;
+  background: #00004b;
+  /* padding: 0.5rem 0.5rem; */
+  /* background-color: var(--bs-table-bg); */
+  /**/
+  /* box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg); */ }
+  .table h3 {
+    color: white; }
+  .table tbody {
+    border-bottom: none; }
+
+td {
+  padding: 0.25em; }
+
+#charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 800px; }
+
+@media (max-width: 767.98px) {
+  header {
+    position: static;
+    height: auto;
+    text-align: center; }
+    header .navbar {
+      float: none; }
+      header .navbar li {
+        display: block; }
+  #top-spacer {
+    display: none; }
+  .container {
+    min-height: 0;
+    margin: 1.5rem 0; } }
