@@ -135,3 +135,19 @@ td {
   
 }
 
+
+.gallery {
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap:1em;
+
+  & .pics {
+    cursor:pointer;
+
+    &:hover {
+      opacity:0.8
+    }
+  }
+
+
+}

@@ -204,6 +204,15 @@ td {
   grid-template-columns: 1fr 1fr;
   height: 800px; }
 
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em; }
+  .gallery .pics {
+    cursor: pointer; }
+    .gallery .pics:hover {
+      opacity: 0.8; }
+
 @media (max-width: 767.98px) {
   header {
     position: static;

@@ -1,6 +1,16 @@
+
+$(".pics").click(function(){
+  ")
+
+  modal_contents = `<img src='${$(this).data("href")}' />`
+  console.log(modal_contents)
+
+  $(".modal-body").html(modal_contents)
+
+  $("body").append(modalWindow)
+})
+
 nums = {};
-
-
 
 
 $("#persistent--sold-for").change(function(){
