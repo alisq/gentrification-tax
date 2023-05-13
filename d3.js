@@ -1,14 +1,26 @@
+//initial attempt at the function via desmos
+
+function nums1(x) {
+
+  y = Math.pow(1.3,(x-13))*0.4+0.14 
+  return y 
+}
+let datas = [];
+for (let i=0;i<20;i++) {
+  datas.push({"x":i,"y":nums1(i)})
+}
+
+
 
   // set the dimensions and margins of the graph
-  const margin = {top: 10, right: 220, bottom: 30, left: 180},
-      width = 700 - margin.left - margin.right,
-      height = 500 - margin.top - margin.bottom;
+  const margin = {top: 10, right: 60, bottom: 30, left: 140},
+      width = 1000 - margin.left - margin.right,
+      height = 800 - margin.top - margin.bottom;
   
   // append the svg object to the body of the page
   const svg = d3.select("#chart1")
     .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
+      .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
     .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
   
@@ -92,7 +104,7 @@
 
 
 /////
-var datas = [{"x":0,"y":0.07032144101036253},{"x":1,"y":0.07058451551092236},{"x":2,"y":0.07106113424991078},{"x":3,"y":0.07192062412012551},{"x":4,"y":0.07345760916499257},{"x":5,"y":0.07616536351308369},{"x":6,"y":0.08081245054420991},{"x":7,"y":0.0884406384370634},{"x":8,"y":0.10009177814512772},{"x":9,"y":0.11606468019064661},{"x":10,"y":0.135},{"x":11,"y":0.15393531980935343},{"x":12,"y":0.1699082218548723},{"x":13,"y":0.18155936156293662},{"x":14,"y":0.1891875494557901},{"x":15,"y":0.19383463648691635},{"x":16,"y":0.19654239083500746},{"x":17,"y":0.1980793758798745},{"x":18,"y":0.19893886575008923},{"x":19,"y":0.19941548448907764}]
+// var datas = [{"x":0,"y":0.07032144101036253},{"x":1,"y":0.07058451551092236},{"x":2,"y":0.07106113424991078},{"x":3,"y":0.07192062412012551},{"x":4,"y":0.07345760916499257},{"x":5,"y":0.07616536351308369},{"x":6,"y":0.08081245054420991},{"x":7,"y":0.0884406384370634},{"x":8,"y":0.10009177814512772},{"x":9,"y":0.11606468019064661},{"x":10,"y":0.135},{"x":11,"y":0.15393531980935343},{"x":12,"y":0.1699082218548723},{"x":13,"y":0.18155936156293662},{"x":14,"y":0.1891875494557901},{"x":15,"y":0.19383463648691635},{"x":16,"y":0.19654239083500746},{"x":17,"y":0.1980793758798745},{"x":18,"y":0.19893886575008923},{"x":19,"y":0.19941548448907764}]
 
 
 var x = d3.scaleLinear()
@@ -109,8 +121,7 @@ var line = d3.line()
 
 var svg2 = d3.select("#chart2")
 .append("svg")
-.attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
+.attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
     .append("g")
       
     .append("g")
@@ -125,6 +136,12 @@ svg2.append("path")
            .style("fill", "none")
       
     .attr("d", line);
+
+
+    svg2.append("g")
+        .attr("transform", `translate(0, ${height})`)
+        .attr("class", "small")
+        .call(d3.axisBottom(x));
 
 // svg2.append("g")
 //     .attr("transform", "translate(0," + height + ")")
