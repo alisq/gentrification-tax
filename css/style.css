@@ -214,6 +214,9 @@ td {
   grid-template-columns: 1fr 1fr;
   padding: 1.5rem 3rem; }
 
+#bar_svg svg {
+  width: 100%; }
+
 #letter {
   border: 2px solid #00004b;
   aspect-ratio: 0.77/1;

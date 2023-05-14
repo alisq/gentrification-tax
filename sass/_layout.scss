@@ -142,6 +142,10 @@ td {
   
 }
 
+#bar_svg svg {
+  width:100%;
+}
+
 #letter {
   border:2px solid $black;
   aspect-ratio: 0.77/1;
