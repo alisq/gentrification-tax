@@ -161,6 +161,16 @@ header {
 .main-content {
   min-height: 80vh; }
 
+.modal-fullscreen {
+  width: calc(100vw - 8vh);
+  height: 92vh;
+  margin: 4vh; }
+  .modal-fullscreen .modal-body img {
+    display: block;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%; }
+
 .graph {
   display: block;
   max-width: 60%;
