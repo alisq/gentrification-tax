@@ -201,7 +201,13 @@ td {
 
 #charts {
   display: grid;
-  grid-template-columns: 1fr 1fr; }
+  grid-template-columns: 1fr 1fr;
+  padding: 1.5rem 3rem; }
+
+#letter {
+  border: 2px solid #00004b;
+  padding: 6rem;
+  margin: 3rem; }
 
 .gallery {
   display: grid;
