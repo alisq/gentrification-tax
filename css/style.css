@@ -216,7 +216,8 @@ td {
 
 #letter {
   border: 2px solid #00004b;
-  padding: 6rem;
+  aspect-ratio: 0.77/1;
+  padding: 9rem;
   margin: 3rem; }
 
 .gallery {
