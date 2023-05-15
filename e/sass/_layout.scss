@@ -1,0 +1,172 @@
+
+header {
+    position:fixed;
+    width:100%;
+    z-index:100;
+    // height:4rem;
+    background:$white;
+    border-bottom:3px dashed $black;
+
+    h1 {
+      padding:1em;
+    }
+
+    .navbar {
+      list-style-type: none;  
+      display:inline-block;
+        padding:1rem;
+        margin:0;
+        float:right;
+        
+        & li {
+          display:inline;
+
+          & .nav-link {
+            display:inline-block;
+            padding:0 0.5em;
+            color:$black;
+            background:$white;
+            border-color:$white;
+
+          &:hover,
+          &:active,
+          &.active {
+            background:$black;
+            color:$white;
+            border-color:$black;
+
+          }
+
+          }
+
+        }
+        
+        
+
+          
+
+      }
+      
+  }
+
+  #footer {
+    border-top:3px dashed $black;
+  }
+  
+  #top-spacer {
+    height:5em;
+  }
+
+  .main-content {
+    min-height:80vh;
+  }
+
+
+  .modal-fullscreen {
+    width:calc(100vw - 8vh);
+    height:92vh;
+    margin:4vh;
+
+    & .modal-body img {
+      display:block;
+      margin:auto;
+      max-height:100%;
+      max-width:100%;
+    }
+  }
+
+.graph {
+    display:block;
+    max-width:60%;
+    margin:0 auto 2em;
+  }
+  
+  
+  #bar {
+    margin:1em;
+    height:150px;
+    background:rgba(241,242,242,1);
+    display:flex;
+  }
+  
+  #bar-gentrification-tax {
+    width:5%;
+    background:rgba(218,28,92,0.75);
+    height:100%;
+  }
+
+
+.float-right {
+    float:right;
+  }
+
+  
+table {
+    width:100%;
+}
+  
+ .table {
+  
+
+  
+  padding:1em 0;
+    color:$white;
+    background:$black;
+
+    & h3 {
+      color:white;
+    }
+    & tbody {
+      border-bottom:none;
+    }
+    
+//   border:1px solid rgba($black,1)
+
+    /* padding: 0.5rem 0.5rem; */
+    /* background-color: var(--bs-table-bg); */
+    /**/
+    /* box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg); */
+
+}
+  
+td {
+    padding:0.25em;
+}
+
+
+#charts {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  padding:1.5rem 3rem;
+  
+  
+}
+
+#bar_svg svg {
+  width:100%;
+}
+
+#letter {
+  border:2px solid $black;
+  aspect-ratio: 0.77/1;
+
+  padding:9rem;
+  margin:3rem;
+}
+
+
+.gallery {
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap:1em;
+
+  & .pics {
+    cursor:pointer;
+
+    &:hover {
+      opacity:0.8
+    }
+  }
+
+
+}

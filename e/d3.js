@@ -1,14 +1,26 @@
+//initial attempt at the function via desmos
+
+function nums1(x) {
+
+  y = Math.pow(1.3,(x-13))*0.4+0.14 
+  return y 
+}
+let datas = [];
+for (let i=0;i<20;i++) {
+  datas.push({"x":i,"y":nums1(i)})
+}
+
+
 
   // set the dimensions and margins of the graph
-  const margin = {top: 10, right: 220, bottom: 30, left: 180},
-      width = 700 - margin.left - margin.right,
-      height = 500 - margin.top - margin.bottom;
+  const margin = {top: 10, right: 60, bottom: 30, left: 140},
+      width = 1000 - margin.left - margin.right,
+      height = 600 - margin.top - margin.bottom;
   
   // append the svg object to the body of the page
   const svg = d3.select("#chart1")
     .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
+      .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
     .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
   
@@ -92,7 +104,7 @@
 
 
 /////
-var datas = [{"x":0,"y":0.07032144101036253},{"x":1,"y":0.07058451551092236},{"x":2,"y":0.07106113424991078},{"x":3,"y":0.07192062412012551},{"x":4,"y":0.07345760916499257},{"x":5,"y":0.07616536351308369},{"x":6,"y":0.08081245054420991},{"x":7,"y":0.0884406384370634},{"x":8,"y":0.10009177814512772},{"x":9,"y":0.11606468019064661},{"x":10,"y":0.135},{"x":11,"y":0.15393531980935343},{"x":12,"y":0.1699082218548723},{"x":13,"y":0.18155936156293662},{"x":14,"y":0.1891875494557901},{"x":15,"y":0.19383463648691635},{"x":16,"y":0.19654239083500746},{"x":17,"y":0.1980793758798745},{"x":18,"y":0.19893886575008923},{"x":19,"y":0.19941548448907764}]
+// var datas = [{"x":0,"y":0.07032144101036253},{"x":1,"y":0.07058451551092236},{"x":2,"y":0.07106113424991078},{"x":3,"y":0.07192062412012551},{"x":4,"y":0.07345760916499257},{"x":5,"y":0.07616536351308369},{"x":6,"y":0.08081245054420991},{"x":7,"y":0.0884406384370634},{"x":8,"y":0.10009177814512772},{"x":9,"y":0.11606468019064661},{"x":10,"y":0.135},{"x":11,"y":0.15393531980935343},{"x":12,"y":0.1699082218548723},{"x":13,"y":0.18155936156293662},{"x":14,"y":0.1891875494557901},{"x":15,"y":0.19383463648691635},{"x":16,"y":0.19654239083500746},{"x":17,"y":0.1980793758798745},{"x":18,"y":0.19893886575008923},{"x":19,"y":0.19941548448907764}]
 
 
 var x = d3.scaleLinear()
@@ -109,8 +121,7 @@ var line = d3.line()
 
 var svg2 = d3.select("#chart2")
 .append("svg")
-.attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
+.attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
     .append("g")
       
     .append("g")
@@ -125,6 +136,12 @@ svg2.append("path")
            .style("fill", "none")
       
     .attr("d", line);
+
+
+    svg2.append("g")
+        .attr("transform", `translate(0, ${height})`)
+        .attr("class", "small")
+        .call(d3.axisBottom(x));
 
 // svg2.append("g")
 //     .attr("transform", "translate(0," + height + ")")
@@ -155,3 +172,115 @@ svg.append("text")
   .text("Year purchased");
 
 
+
+
+
+  ///STACKED BAR CHART
+  sampleData = [
+    { label: 'Property Tax', value: 4.65 },
+    { label: 'Municipal Lang and Transfer Tax', value: 0.94 },
+    { label: 'Development Charges', value: 0.38 },
+    { label: 'Section 37 Community Benefits', value: 0.08 },
+    { label: 'Vacant Home Tax', value: 0.08 },
+    { label: 'Other Tax Supported Revenues', value: 2.91 },
+    { label: 'Rate Supported Revenues', value: 1.96 },
+    { label: 'Federal and Provincial Subsidies', value: 4.07 },
+  ]
+
+  stackedBar(sampleData, {
+    colors: ['#ff616b', '#fa9442', '#bf36e0','#ff616b', '#fa9442', '#bf36e0','#ff616b', '#fa9442', '#bf36e0']
+  })
+
+  function stackedBar (data, {
+    height = 400,
+    barHeight = 200,
+    halfBarHeight = barHeight / 2,
+    f = d3.format('.1f'),
+    margin = {top: 20, right: 0, bottom: 20, left: 0},
+    w = 1300,
+    h = height * 0.66,
+    colors = ["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00", "#ffff33"]
+  } = {}) {
+  
+    // Have a total of values for reference from the data:
+    const total = d3.sum(data, d => d.value);
+    console.info('total', total);
+  
+    // Format the data (instead of using d3.stack()) and filter out 0 values:
+    function groupDataFunc(data) {
+      // use a scale to get percentage values
+      const percent = d3.scaleLinear()
+        .domain([0, total])
+        .range([0, 100])
+      // filter out data that has zero values
+      // also get mapping for next placement
+      // (save having to format data for d3 stack)
+      let cumulative = 0
+      const _data = data.map(d => {
+        cumulative += d.value
+        return {
+          value: d.value,
+          // want the cumulative to prior value (start of rect)
+          cumulative: cumulative - d.value,
+          label: d.label,
+          percent: percent(d.value)
+        }
+      }).filter(d => d.value > 0)
+      return _data
+    };
+  
+    const groupData = groupDataFunc(data);
+    console.info('groupData', groupData);
+  
+    const svg_stacked = d3.select("#bar_svg")
+    .append("svg").attr("viewBox", `0 0 ${w} ${height}`)
+
+    const sel = d3.select(svg_stacked);
+    
+    // set up scales for horizontal placement
+    const xScale = d3.scaleLinear()
+      .domain([0, total])
+      .range([0, w]);
+  
+    const join = svg_stacked.selectAll('g')
+      .data(groupData)
+      .join('g')
+      .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+  
+    // stack rect for each data value
+    join.append('rect')
+      .attr('class', 'rect-stacked')
+      .attr('x', d => xScale(d.cumulative))
+      .attr('y', h / 2 - halfBarHeight)
+      .attr('height', barHeight)
+      .attr('width', d => xScale(d.value))
+      .style('fill', (d, i) => colors[i])
+      .style('stroke','black')
+  
+    // add values on bar
+    join.append('text')
+      .attr('class', 'text-value')
+      .attr('text-anchor', 'middle')
+      .attr('x', d => xScale(d.cumulative) + (xScale(d.value) / 2))
+      .attr('y', (h / 2) + 5)
+      .text(d => d.value);
+  
+    // add some labels for percentages
+    join.append('text')
+      .attr('class', 'text-percent')
+      .attr('text-anchor', 'middle')
+      .attr('x', d => xScale(d.cumulative) + (xScale(d.value) / 2))
+      .attr('y', (h / 2) - (halfBarHeight * 1.1))
+      .text(d => f(d.percent) + ' %');
+  
+    // add the labels
+    join.append('text')
+      .attr('class', 'text-label')
+      .attr('text-anchor', 'middle')
+      .attr('x', d => xScale(d.cumulative) + (xScale(d.value) / 2))
+      .attr('y', (h / 2) + (halfBarHeight * 1.1) + 20)
+      .style('fill', (d, i) => colors[i])
+      .text(d => d.label);
+    
+    return svg_stacked;
+  }

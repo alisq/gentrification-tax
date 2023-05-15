@@ -161,6 +161,16 @@ header {
 .main-content {
   min-height: 80vh; }
 
+.modal-fullscreen {
+  width: calc(100vw - 8vh);
+  height: 92vh;
+  margin: 4vh; }
+  .modal-fullscreen .modal-body img {
+    display: block;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%; }
+
 .graph {
   display: block;
   max-width: 60%;
@@ -202,7 +212,25 @@ td {
 #charts {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 800px; }
+  padding: 1.5rem 3rem; }
+
+#bar_svg svg {
+  width: 100%; }
+
+#letter {
+  border: 2px solid #00004b;
+  aspect-ratio: 0.77/1;
+  padding: 9rem;
+  margin: 3rem; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em; }
+  .gallery .pics {
+    cursor: pointer; }
+    .gallery .pics:hover {
+      opacity: 0.8; }
 
 @media (max-width: 767.98px) {
   header {
