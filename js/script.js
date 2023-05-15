@@ -55,7 +55,7 @@ function calculate() {
 
     {
 
-        nums.boughtFor = parseInt($("#bought-for").val().replace("$","").replace(",",""))
+        nums.boughtFor = parseInt($("#bought-for").val().replace("$","").replaceAll(",",""))
         nums.boughtYear = $("#bought-year").val()
         console.log($("#sold-for").val().replace("$","").replaceAll(",",""))
         nums.soldFor = parseInt($("#sold-for").val().replace("$","").replaceAll(",",""))
@@ -101,24 +101,30 @@ function calculate() {
 
 
 let xPos =  ((nums.boughtYear-2000)/22)*width+"px"
-let yPos =  height-((nums.boughtFor)/1189917)*height+"px"
+let yPos =  height-(nums.boughtFor/2000000)*height+"px"
 
-
-
+let xPos2 = width+"px";
+let yPos2 = height-(nums.soldFor/2000000)*height+"px"
 
 var div = d3.select("body").append("div")	
 .attr("class", "tooltip")				
 .style("opacity", 1);
 
+$(".boughtCircle").remove();
+
+
+
 
 svg
 .append("circle")
-.attr("class", "circle")
+.attr("class", "boughtCircle")
 .attr("r", 10)
 .attr("cx", xPos )
 .attr("cy",  yPos)
 .on("mouseover", function(d) {		
 
+
+  console.log($(".boughtCircle").attr("cx"))
   div.style("left", (d.pageX) + "px")		
   .style("top", (d.pageY - 28) + "px");	 
   div.transition()		
@@ -134,6 +140,40 @@ svg
       .style("opacity", 0)
       
 });
+
+
+//labels for first dot.
+    txt1 = svg.append("text")
+              .attr("x",xPos).attr("y",yPos)
+              .attr("id","boughtBox")
+              .style("transform","translate(-30px,-60px)")
+              
+    l1 = txt1.append("tspan").attr("x",xPos).text("bought for: $"+formatNumber(nums.boughtFor));
+    l2 = txt1.append("tspan").attr("x",xPos).attr("dy", 24).text("in: "+nums.boughtYear);
+    
+        
+        
+
+          
+//labels for first dot.
+txt2= svg.append("text")
+.attr("x",xPos2).attr("y",yPos2)
+.attr("id","soldBox")
+.style("transform","translate(-230px,-30px)")
+
+l1 = txt2.append("tspan").attr("x",xPos2).text("bought for: $"+formatNumber(nums.soldFor));
+
+
+
+
+
+
+svg
+.append("circle")
+.attr("class", "soldCircle")
+.attr("r", 10)
+.attr("cx", xPos2 )
+.attr("cy",  yPos2)
 
 }
 
@@ -185,9 +225,10 @@ $("#sold-for, #bought-for").on({
 });
 
 
-function formatNumber(n) {
+function formatNumber(num) {
   // format number 1000000 to 1,234,567
-  return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+  v = num.toString().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+  return v;
 }
 
 
@@ -314,7 +355,7 @@ for (let i=0;i<20;i++) {
 
       // Add Y axis
       const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .domain([0, 2000000])
         .range([ height, 0 ]);
       
       // Add the line
