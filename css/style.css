@@ -214,6 +214,25 @@ td {
   grid-template-columns: 1fr 1fr;
   padding: 1.5rem 3rem; }
 
+.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 160px;
+  height: 70px;
+  padding: 2px;
+  font: 12px sans-serif;
+  border: 1px solid #000;
+  background: white;
+  pointer-events: none;
+  transform: translate(-50%, -50px); }
+  .tooltip:before {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: #00004b;
+    position: relative;
+    top: 100px; }
+
 #bar_svg svg {
   width: 100%; }
 

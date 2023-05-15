@@ -142,6 +142,29 @@ td {
   
 }
 
+
+
+.tooltip {	
+  position: absolute;			
+  text-align: center;			
+  width: 160px;					
+  height: 70px;					
+  padding: 2px;				
+  font: 12px sans-serif;		  
+  border: 1px solid #000;		
+  background:$white;
+  pointer-events: none;			
+  transform:translate(-50%,-50px);
+
+  &:before {
+    display:block;
+    width:30px;height:30px;
+    background:$black;
+    position:relative;
+    top:100px;
+  }
+}
+
 #bar_svg svg {
   width:100%;
 }
