@@ -106,13 +106,29 @@ let yPos =  height-(nums.boughtFor/2000000)*height+"px"
 let xPos2 = width+"px";
 let yPos2 = height-(nums.soldFor/2000000)*height+"px"
 
+
+let xPos3 = (nums.boughtYear-2000)/21*width+"px"
+let yPos3 = (2023-nums.boughtYear)+21
+console.log(yPos3)
+
+ yPos3 = (height-nums2(yPos3)+"px")
+console.log(yPos3)
+
+
+
 var div = d3.select("body").append("div")	
 .attr("class", "tooltip")				
 .style("opacity", 1);
 
-$(".boughtCircle").remove();
+$(".rateCircle, .boughtCircle").remove();
 
 
+svg2
+.append("circle")
+.attr("class", "rateCircle")
+.attr("r", 10)
+.attr("cx", xPos3 )
+.attr("cy",  yPos3)
 
 
 svg
@@ -124,7 +140,7 @@ svg
 .on("mouseover", function(d) {		
 
 
-  console.log($(".boughtCircle").attr("cx"))
+
   div.style("left", (d.pageX) + "px")		
   .style("top", (d.pageY - 28) + "px");	 
   div.transition()		
@@ -161,7 +177,7 @@ txt2= svg.append("text")
 .attr("id","soldBox")
 .style("transform","translate(-230px,-30px)")
 
-l1 = txt2.append("tspan").attr("x",xPos2).text("bought for: $"+formatNumber(nums.soldFor));
+l1 = txt2.append("tspan").attr("x",xPos2).text("sold for $"+formatNumber(nums.soldFor));
 
 
 
@@ -305,10 +321,19 @@ function nums1(x) {
   y = Math.pow(1.3,(x-13))*0.4+0.14 
   return y 
 }
-let datas = [];
-for (let i=0;i<20;i++) {
-  datas.push({"x":i,"y":nums1(i)})
+
+
+//initial attempt at the function via desmos
+function nums2(x) {
+
+  y = Math.pow(1.25,(x-13))*0.3+0.14 
+  return y 
 }
+let datas = [];
+for (let i=0;i<23;i++) {
+  datas.push({"x":i,"y":nums2(23-i)})
+}
+
 
 
 
@@ -411,7 +436,7 @@ var x = d3.scaleLinear()
     .range([0, width]);
 
 var y = d3.scaleLinear()
-.domain(d3.extent(datas, function(d) { return d.y; }))
+.domain([0, 3])
     .range([height, 0]);
 
 var line = d3.line()
@@ -450,7 +475,7 @@ svg2.append("path")
     var axisRight = d3.axisRight(y);
     
 
-var g2 = svg2.append("g").attr("transform", "translate("+(width)+",0)").style("color","red").call(axisRight);
+var g2 = svg2.append("g").attr("transform", "translate("+(width)+",0)").style("color","red").call(axisRight.tickFormat(y => y*10+"%"));
 
 //LEFT AXIS TITLE
 svg.append("text")
