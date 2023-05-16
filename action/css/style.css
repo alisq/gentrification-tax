@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'courier prime sans';
+    src: url('fonts/Courier\ Prime\ Sans.ttf') format('truetype');
+}
+
+
+body,
+html {
+    font-family: 'courier prime sans';
+    font-size:21px;
+}
+
 h3 {
     margin:0;
     padding:0;
