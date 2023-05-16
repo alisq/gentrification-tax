@@ -4,6 +4,13 @@
 }
 
 
+@font-face {
+    font-family: 'courier prime sans';
+    src: url('fonts/Courier\ Prime\ Sans\ Italic.ttf') format('truetype');
+    font-style: italic;
+}
+
+
 body,
 html {
     font-family: 'courier prime sans';
