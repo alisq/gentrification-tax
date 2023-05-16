@@ -3,11 +3,14 @@ const margin = {top: 10, right: 60, bottom: 30, left: 140},
 width = 1000 - margin.left - margin.right,
 height = 600 - margin.top - margin.bottom;
 nums = {};
+let modal_caption = ""
 
 //UI stuff
 $(".pics").click(function(){
   modal_contents = `<img src='${$(this).data("href")}' />`
+  if ($(this).data("caption") !== undefined)  {modal_caption = "<span class='figure-caption'>"+$(this).data("caption")+"</span>"}
   $(".modal-body").html(modal_contents)
+  $(".modal-footer").html(modal_caption)
 })
 
 

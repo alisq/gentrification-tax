@@ -224,7 +224,8 @@ td {
   border: 1px solid #000;
   background: white;
   pointer-events: none;
-  transform: translate(-50%, -50px); }
+  transform: translate(-50%, -50px);
+  opacity: 0.9; }
   .tooltip:before {
     display: block;
     width: 30px;
@@ -244,7 +245,7 @@ td {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 1em; }
   .gallery .pics {
     cursor: pointer; }
